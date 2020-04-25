@@ -1,0 +1,180 @@
+
+.container-main{
+    width: 933px;
+    height: 312px;
+}
+
+
+/*header*/
+.header{
+    background-color: #e6e5e2;
+    width: 70.75%;
+}
+
+.header h1{
+    font-size: 20px;
+}
+
+.sell-car-button {
+    border: 2px solid goldenrod;
+    color: goldenrod;
+    font-size: 18px;
+    background-color: #e6e5e2;
+    margin-top: -48px;
+    margin-left: 675px;
+    float: left;
+    outline: none;
+    width: 250px;
+    font-weight: bold;
+    height: 40px;
+}
+/*header*/
+
+/*content*/
+
+
+.tab-content{
+    display:none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-top:none;
+    font-size: 16px;
+    color:gray;
+    width: 933px;
+    height: 312px;
+}
+
+
+/*checkbox*/
+
+.checkbox-container {
+    overflow:hidden;
+    display:inline;
+}
+
+.checkbox-container-element{
+    margin-left: 10px;
+    display: contents;
+}
+
+.checkbox-container-element input:checked {
+    color:red
+}
+
+/*checkbox*/
+
+/* combobox */
+
+.filter-container {
+
+    padding: 5px;
+    
+}
+
+.filter-container-element {
+    float: left;
+    margin-top: 10px;
+}
+
+
+.filter-container input{
+    width: 400px;
+    height: 21px;
+    color:gray;
+    float: left;
+    
+}
+
+.filter-container select {
+    height: 27px;
+    font-size: 15px;
+    margin-right: 12px;
+    color: gray;
+}
+.small-select select {
+    width: 100px;
+}
+
+.medium-select select {
+    width: 175px;
+}
+
+.big-select select{
+    width: 504px;
+}
+
+/* combobox */
+
+/* search buttons/link */
+
+.link-advanced a{
+    color: red;
+    font-size: 16px;
+}
+
+.link-clean-filter button {
+    margin-left: 445px;
+    border: none;
+    background-color: transparent;
+    color: lightgray;
+    font-size: 16px;
+    margin-top: 13px;
+}
+
+.button-view-offers button {
+    color: white;
+    background-color: red;
+    width: 227px;
+    height: 51px;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 16px;
+}
+/* search buttons */
+
+
+/*menu*/
+
+.tab{
+    overflow: hidden;
+    border: none;
+    background-color: #e6e5e2;
+    width: '60%';
+}
+
+.tab-button{
+    background-color: inherit;
+    float: left;
+    outline: none;
+    padding: 15px 15px;
+    width: 200px;
+    transition:0.3s;
+    border:none;
+    font-size: 25px;
+    border-bottom: 1px solid black;
+}
+
+.tab button:hover{
+    background-color: '#ddd';
+}
+
+.tab button.active {
+    border-bottom: 1px solid red;
+  }
+
+
+/*menu*/
+
+
+
+/* 
+
+  .tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second }*/
+  
+  
+  /* Go from zero to full opacity */
+  /* @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  } */ 
