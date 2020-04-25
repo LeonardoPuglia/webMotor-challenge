@@ -1,16 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-
-import TabMenu from './components/TabMenu'
-import TabContent from './components/TabContent'
+import Main from './components/Main'
 
 
 ReactDOM.render(
-    <div>
-        <TabMenu />
-        <TabContent class='car' id='carId' title='Carros' description='Melhores carros para compras' />
-        <TabContent class='motor' id='motorId' title='Motos' description='Melhores motos para compras'/>
-    </div>,
+    <Main />,
     document.getElementById('app')
 )

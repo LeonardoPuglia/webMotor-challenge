@@ -1,17 +1,37 @@
 import React, {Component} from 'react'
-import {openTab} from '../actions/TabAction'
+// import {connect} from 'react-redux'
+// import {bindActionCreators} from 'redux'
+import {openTab, initTabMenu} from '../actions/TabAction'
 
-class TabMenu extends Component{
+export default class TabMenu extends Component {
 
-    
+    constructor(props){
+        super(props)
+        this.openTabComponent = this.openTabComponent.bind(this)
+    }
+
+  
+    openTabComponent(e, tabId){
+        openTab(e,tabId)
+    }
+
     render(){
         return(
             <div className="tab">
-                <button className="tabButton" onClick={this.props.openTab('car','carId')} >Carros</button>
-                <button className="tabButton" onClick={this.props.openTab('motor','motorId')} >Motos</button>
+                <button className="tab-button active" onClick={e => this.openTabComponent(e,'carId') } > CARROS</button>
+                <button className="tab-button" onClick={e => this.openTabComponent(e,'motorId') }> MOTOS</button>
+                <button className='sell-car-button' onClick=''>Vender meu carro</button>
+                
             </div>
+          
         )
     }
+    
+
 }
 
-export default TabMenu
+
+
+// const mapDispatchToProps = dispatch => bindActionCreators({openTab}, dispatch)
+
+// export default connect(null, mapDispatchToProps)(TabMenu)
