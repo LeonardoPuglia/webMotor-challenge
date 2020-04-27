@@ -1,79 +1,60 @@
 import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 
 import {getMakes} from '../../api/WebMotorsAPI'
-
-//import {prepareMakeList} from '../actions/SearchAction'
  
 export default class ComboBoxMake extends Component{
     
     constructor(props){
         super(props)
-        this.state = {makeList: []}
-        this.init = this.init.bind(this)
         this.mountAllMakes = this.mountAllMakes.bind(this)        
     }
 
-    
-    init(){
-        
-        //const allMakes = getMakes()
-        const allMakes =  [
-            {
-              "ID": 1,
-              "Name": "Chevrolet"
-            },
-            {
-              "ID": 2,
-              "Name": "Honda"
-            },
-            {
-              "ID": 3,
-              "Name": "Ford"
+    componentDidMount(){
+        const promise = new Promise((resolve, reject) => {
+            try{
+                resolve( getMakes())
+            }catch(err){
+                reject(err)
             }
-          ]
+        })
 
-        console.log('return of getMake: '+ allMakes)
+        promise.then((allMakes) => {
 
-        if(allMakes === null){
-            console.log('houve algum problema com a api')
-            return
-        }
-            
-
-        this.setState({makeList: allMakes })
-        
+            if(allMakes === null){
+                console.log('houve algum problema com a api')
+                return
+            }
+                
+            this.mountAllMakes(allMakes)
+        })
     }
+    
 
 
-    componentWillMount(){
-
-        this.init()
-        
-    }
-
-    mountAllMakes() {
-        console.log('mountAllMakes: ' + JSON.stringify(this.state.makeList))
+    mountAllMakes(allMakes) {
         const allOptions = 
-            this.state.makeList !== []
-            ? this.state.makeList.map((item) => {
-                    return (
-                        <option key={item.ID} value={item.ID}>{item.Name}</option>
-                    )
-                })
-                : null
+            allMakes.map((item) => {
+                        return (
+                            <option key={item.ID} value={item.ID}>{item.Name}</option>
+                        )
+                    })
+        
 
-        return allOptions
+        ReactDOM.render(
+            <select name='brand'>
+                    <option value={0}>Marca: Todas</option>
+                    {allOptions}
+            </select>
+            ,
+            document.getElementById('brandId')
+        )
+        
     }
 
     render(){
         return(
-            <div className='filter-container-element medium-select'>
-                <select name='brand'>
-                <option value={0}>Marca: Todas</option>
-                   {this.mountAllMakes()}
-                </select>
-            </div>
-        
+            <div id='brandId' className='filter-container-element medium-select'></div>
         )
     }
 }

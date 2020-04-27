@@ -20,12 +20,16 @@ class TabContent extends Component{
 
     constructor(props){
         super(props)
-        
+        this.setStyle = this.setStyle.bind(this)
+    }
+
+    setStyle(){
+        return this.props.isHided ? {display:'none' }: {}
     }
 
     render(){
         return(
-            <div className={`tab-content`} id={this.props.id}>
+            <div className={`tab-content`} id={this.props.id}  style={this.setStyle()}>
                 
                 <CheckBoxFilter />
 
@@ -33,7 +37,7 @@ class TabContent extends Component{
                     
                     <div className='filter-container-element'>
                         <FontAwesomeIcon icon={faMapMarkerAlt} />
-                        <input type='text'placeholder='Onde...' />
+                        <input type='text' placeholder='Onde...' />
                     </div>
                     
                     <ComboBoxRadius />

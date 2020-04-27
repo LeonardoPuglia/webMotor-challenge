@@ -11,7 +11,8 @@ export default props =>{
         <>
             <Header />
             
-            <TabContent class='car' id='carId' title='Carros' description='Melhores carros para compras' />
+            <TabContent id='carId' isHided={false} />
+            <TabContent  id='motorCycleId'  isHided={true} />
             
         </>
     )

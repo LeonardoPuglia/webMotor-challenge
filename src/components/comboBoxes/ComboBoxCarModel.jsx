@@ -1,73 +1,56 @@
 import React, {Component} from 'react'
+import ReactDOM from 'react-dom'
 
 import {getModels} from '../../api/WebMotorsAPI'
-
-//import {prepareMakeList} from '../actions/SearchAction'
  
 export default class ComboBoxCarModel extends Component{
     
     constructor(props){
         super(props)
-        this.state = {carModelsList: []}
-        this.init = this.init.bind(this)
         this.mountAllCarModels = this.mountAllCarModels.bind(this)        
     }
 
-    
-    init(){
-        
-        //const allMakes = getMakes()
-        const allCarsModels =  [
-            {
-              "MakeID": 1,
-              "ID": 1,
-              "Name": "Agile"
-            },
-            {
-              "MakeID": 1,
-              "ID": 2,
-              "Name": "Astra"
-            },
-            {
-              "MakeID": 1,
-              "ID": 3,
-              "Name": "Onix"
+    componentDidMount(){
+        const promise = new Promise((resolve, reject) => {
+            try{
+                resolve( getModels(1))
+            }catch(err){
+                reject(err)
             }
-          ]
+        })
 
+        promise.then((allModels) => {
 
-        this.setState({carModelsList: allCarsModels })
-        
+            if(allModels === null){
+                console.log('houve algum problema com a api')
+                return
+            }
+                
+            this.mountAllCarModels(allModels)
+        })
     }
 
-
-    componentWillMount(){
-
-        this.init()
-        
-    }
-
-    mountAllCarModels() {
+    mountAllCarModels(allModels) {
         const allOptions = 
-            this.state.carModelsList !== []
-            ? this.state.carModelsList.map((item) => {
-                    return (
-                        <option key={item.ID} value={item.ID}>{item.Name}</option>
-                    )
-                })
-                : null
+            allModels.map((item) => {
+                        return (
+                            <option key={item.ID} value={item.ID}>{item.Name}</option>
+                        )
+                    })
 
-        return allOptions
+        ReactDOM.render(
+            <select name='model'>
+                <option value={0}>Modelo: Todos</option>
+                    {allOptions}
+            </select>
+            ,
+            document.getElementById('carModelId')
+        )
     }
 
     render(){
         return(
-            <div className='filter-container-element medium-select'>
-            <select name='model'>
-                <option value={0}>Modelo: Todos</option>
-                {this.mountAllCarModels()}
-            </select>
-        </div>
+            <div id='carModelId' className='filter-container-element medium-select'></div>
         
         )
     }
