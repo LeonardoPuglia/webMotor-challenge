@@ -15,10 +15,3 @@
     evt.currentTarget.className += " active"
     
 }
-
-  
-
-export function initTabMenu(tabId){
-    console.log('tab: ' + tabId + 'content: ' + document.getElementById(tabId))
-    //document.getElementsByClassName('defaultOpen').clicked();
-}

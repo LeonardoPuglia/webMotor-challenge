@@ -57,7 +57,7 @@ class TabContent extends Component{
                 <div className='filter-container'>
 
                     <div className='filter-container-element link-advanced'>
-                        <a href='https://www.w3schools.com/html/html_links.asp'> Busca Avançada</a>
+                        <a href='#'> Busca Avançada</a>
                     </div>
                     
                     <div className='filter-container-element link-clean-filter'>

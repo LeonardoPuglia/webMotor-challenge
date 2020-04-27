@@ -1,5 +1,4 @@
 const webpack = require('webpack')
-//const MiniCssExtractPlugin = require('extract-text-webpack-plugin')
 
 
 module.exports= {
@@ -22,17 +21,11 @@ module.exports= {
         }
     },
 
-    // plugins:[
-    //     new MiniCssExtractPlugin({
-    //         filename: 'style.css'
-    //     })
-    // ],
 
     module: {
         rules:[{
             test: /\.css$/,
             use:[
-                //MiniCssExtractPlugin.loader,
                 'style-loader',
                 'css-loader'
             ]

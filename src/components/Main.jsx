@@ -17,5 +17,3 @@ export default props =>{
         </>
     )
 }
-
-//<TabContent class='motor' id='motorId' title='Motos' description='Melhores motos para compras'/>

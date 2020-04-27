@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-// import {connect} from 'react-redux'
-// import {bindActionCreators} from 'redux'
-import {openTab, initTabMenu} from '../helper/TabHelper'
+import {openTab} from '../helper/TabHelper'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCar, faMotorcycle } from "@fortawesome/free-solid-svg-icons";
@@ -50,12 +48,4 @@ export default class TabMenu extends Component {
           
         )
     }
-    
-
 }
-
-
-
-// const mapDispatchToProps = dispatch => bindActionCreators({openTab}, dispatch)
-
-// export default connect(null, mapDispatchToProps)(TabMenu)
