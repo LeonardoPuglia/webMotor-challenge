@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 
+import ComboBoxMake from './comboboxs/ComboBoxMake'
+import ComboBoxCarModel from './comboboxs/ComboBoxCarModel'
+import ComboBoxVersion from './comboboxs/ComboBoxVersion'
+
 class TabContent extends Component{
 
     constructor(props){
@@ -41,7 +45,7 @@ class TabContent extends Component{
                         </select>
                     </div>
 
-                    <div className='filter-container-element medium-select'>
+                    {/* <div className='filter-container-element medium-select'>
                         <select name='brand'>
                             <option >Chevrolet</option>
                             <option >Fiat</option>
@@ -49,9 +53,13 @@ class TabContent extends Component{
                             <option >Honda</option>
                             <option >Nissan</option>
                         </select>
-                    </div>
+                    </div> */}
+
+                    <ComboBoxMake />
+
+                    <ComboBoxCarModel /> 
                     
-                    <div className='filter-container-element medium-select'>
+                    {/* <div className='filter-container-element medium-select'>
                         <select name='model'>
                             <option >modelo 1</option>
                             <option >modelo 2</option>
@@ -59,7 +67,7 @@ class TabContent extends Component{
                             <option >modelo 4</option>
                             <option >modelo 5</option>
                         </select>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='filter-container'>
@@ -82,7 +90,8 @@ class TabContent extends Component{
                         </select>
                     </div>
                     
-
+                    <ComboBoxVersion />
+{/* 
                     <div className='filter-container-element big-select'>
                         <select name='version'>
                             <option >versão 1</option>
@@ -91,7 +100,7 @@ class TabContent extends Component{
                             <option >versão 4</option>
                         </select>
                     </div>
-                    
+                     */}
                 </div>
 
                 <div className='filter-container'>
