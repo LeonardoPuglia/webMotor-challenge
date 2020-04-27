@@ -69,6 +69,7 @@ export default class ComboBoxMake extends Component{
         return(
             <div className='filter-container-element medium-select'>
                 <select name='brand'>
+                <option value={0}>Marca: Todas</option>
                    {this.mountAllMakes()}
                 </select>
             </div>

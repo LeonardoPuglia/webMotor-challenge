@@ -64,6 +64,7 @@ export default class ComboBoxCarModel extends Component{
         return(
             <div className='filter-container-element medium-select'>
             <select name='model'>
+                <option value={0}>Modelo: Todos</option>
                 {this.mountAllCarModels()}
             </select>
         </div>

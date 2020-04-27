@@ -68,6 +68,7 @@ export default class ComboBoxCarModel extends Component{
         return(
             <div className='filter-container-element big-select'>
             <select name='version'>
+            <option value={0}>Versão: Todas</option>
                 {this.mountAllVersionModels()}
             </select>
         </div>

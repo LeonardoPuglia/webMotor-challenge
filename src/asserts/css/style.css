@@ -49,7 +49,7 @@
     font-size: 16px;
     color:gray;
     width: 933px;
-    height: 312px;
+    height: 166px;
 }
 
 
@@ -85,12 +85,18 @@
 }
 
 
+.filter-container-element svg{
+    margin-left: 4px;
+    position: absolute;
+    margin-top: 5px;
+}
+
 .filter-container input{
     width: 400px;
     height: 21px;
     color:gray;
     float: left;
-    
+    text-align: center;
 }
 
 .filter-container select {
@@ -195,16 +201,3 @@
 
 /*menu*/
 
-
-
-/* 
-
-  .tabcontent {
-    animation: fadeEffect 1s; /* Fading effect takes 1 second }*/
-  
-  
-  /* Go from zero to full opacity */
-  /* @keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  } */ 
