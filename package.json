@@ -12,7 +12,7 @@
   "author": "Leonardo Puglia Moya",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-core": "^6.26.3",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
